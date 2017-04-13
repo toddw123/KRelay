@@ -52,12 +52,22 @@ namespace MapFilter
         {
             string tile = "";
             string replacement = "";
-			var dict = GameData.Items.Map.ToDictionary(o => o.Value.Name, o => o.Key);
+			//var dict = GameData.Items.Map.ToDictionary(o => o.Value.Name, o => o.Key);
+            Dictionary<string, ushort> dict = new Dictionary<string, ushort>();
+            GameData.Tiles.Map.ForEach(t => 
+                {
+                    if (!dict.ContainsKey(t.Value.Name))
+                    {
+                        dict.Add(t.Value.Name, t.Key);
+                    }
+                });
+
             new FrmEnumerator(dict, "Choose the tile to replace...", (s) => tile = s).ShowDialog();
             new FrmEnumerator(dict, "Choose the replacement tile...", (s) => replacement = s).ShowDialog();
 
             if (tile != "" && replacement != "")
             {
+                Console.WriteLine(tile + " " + replacement);
                 string filter = tile + "=>" + replacement;
                 listTileFilters.Items.Add(filter);
                 MapFilterConfig.Default.TileFilters.Add(filter);
@@ -97,6 +107,22 @@ namespace MapFilter
         private void FrmMapFilterSettings_FormClosing(object sender, FormClosingEventArgs e)
         {
             _m.RebuildCache();
+        }
+
+        private void doneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MapFilterConfig.Default.Save();
+            this.Close();
+        }
+
+        private void resetToDefaultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to reset your settings?", "Map Filter", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                MapFilterConfig.Default.Reset();
+                MapFilterConfig.Default.Save();
+                this.Close();
+            }
         }
     }
 }

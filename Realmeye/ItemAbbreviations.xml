@@ -1,0 +1,554 @@
+﻿<items>
+  
+  <!-- Stat Potions -->
+  <item name="Potion of Attack">
+    <abbr>atk</abbr>
+    <abbr>att</abbr>
+  </item>
+  <item name="Potion of Defense">
+    <abbr>def</abbr>
+  </item>
+  <item name="Potion of Speed">
+    <abbr>spd</abbr>
+  </item>
+  <item name="Potion of Vitality">
+    <abbr>vit</abbr>
+    <abbr>vita</abbr>
+  </item>
+  <item name="Potion of Wisdom">
+    <abbr>wis</abbr>
+  </item>
+  <item name="Potion of Dexterity">
+    <abbr>dex</abbr>
+  </item>
+  <item name="Potion of Life">
+    <abbr>life</abbr>
+  </item>
+  <item name="Potion of Mana">
+    <abbr>mana</abbr>
+  </item>
+  
+  <!-- Daggers -->
+  <item name="Fire Dagger">
+    <abbr>fdagger</abbr>
+    <abbr>t8 dagger</abbr>
+  </item>
+  <item name="Ragetalon Dagger">
+    <abbr>rage</abbr>
+    <abbr>t9 dagger</abbr>
+  </item>
+  <item name="Emeraldshard Dagger">
+    <abbr>emmy</abbr>
+    <abbr>t10 dagger</abbr>
+  </item>
+  <item name="Agateclaw Dagger">
+    <abbr>agate</abbr>
+    <abbr>t11 dagger</abbr>
+  </item>
+  <item name="Dagger of Foul Malevolence">
+    <abbr>foul</abbr>
+    <abbr>t12 dagger</abbr>
+  </item>
+  
+  <!-- Bows -->
+  <item name="Golden Bow">
+    <abbr>gbow</abbr>
+    <abbr>t8 bow</abbr>
+  </item>
+  <item name="Verdant Bow">
+    <abbr>vbow</abbr>
+    <abbr>t9 bow</abbr>
+  </item>
+  <item name="Bow of Fey Magic">
+    <abbr>fey</abbr>
+    <abbr>t10 bow</abbr>
+  </item>
+  <item name="Bow of Innocent Blood">
+    <abbr>bbow</abbr>
+    <abbr>t11 bow</abbr>
+  </item>
+  <item name="Bow of Covert Havens">
+    <abbr>covert</abbr>
+    <abbr>t12 bow</abbr>
+  </item>
+  
+  <!-- Staves -->
+  <item name="Staff of Horror">
+    <abbr>horror</abbr>
+    <abbr>t8 staff</abbr>
+  </item>
+  <item name="Staff of Necrotic Arcana">
+    <abbr>necrotic</abbr>
+    <abbr>necro staff</abbr>
+    <abbr>t9 staff</abbr>
+  </item>
+  <item name="Staff of Diabolic Secrets">
+    <abbr>dia</abbr>
+    <abbr>t10 staff</abbr>
+  </item>
+  <item name="Staff of Astral Knowledge">
+    <abbr>astral</abbr>
+    <abbr>t11 staff</abbr>
+  </item>
+  <item name="Staff of the Cosmic Whole">
+    <abbr>cwhole</abbr>
+    <abbr>cosmic</abbr>
+    <abbr>t12 staff</abbr>
+  </item>
+  
+  <!-- Wands -->
+  <item name="Wand of Death">
+    <abbr>death</abbr>
+    <abbr>death wand</abbr>
+    <abbr>t8 wand</abbr>
+  </item>
+  <item name="Wand of Deep Sorcery">
+    <abbr>dsorc</abbr>
+    <abbr>t9 wand</abbr>
+  </item>
+  <item name="Wand of Shadow">
+    <abbr>shadow</abbr>
+    <abbr>shadow wand</abbr>
+    <abbr>t10 wand</abbr>
+  </item>
+  <item name="Wand of Ancient Warning">
+    <abbr>ancient</abbr>
+    <abbr>ancient wand</abbr>
+    <abbr>t11 wand</abbr>
+  </item>
+  <item name="Wand of Recompense">
+    <abbr>recomp</abbr>
+    <abbr>t12 wand</abbr>
+  </item>
+  
+  <!-- Swords -->
+  <item name="Ravenheart Sword">
+    <abbr>raven</abbr>
+    <abbr>ravenheart</abbr>
+    <abbr>t8 sword</abbr>
+  </item>
+  <item name="Dragonsoul Sword">
+    <abbr>dsoul</abbr>
+    <abbr>t9 sword</abbr>
+  </item>
+  <item name="Archon Sword">
+    <abbr>archon</abbr>
+    <abbr>t10 sword</abbr>
+  </item>
+  <item name="Skysplitter Sword">
+    <abbr>sky</abbr>
+    <abbr>skysplitter</abbr>
+    <abbr>t11 sword</abbr>
+  </item>
+  <item name="Sword of Acclaim">
+    <abbr>acclaim</abbr>
+    <abbr>t12 sword</abbr>
+  </item>
+  
+  <!-- Katanas -->
+  <item name="Demon Edge">
+    <abbr>t8 katana</abbr>
+  </item>
+  <item name="Jewel Eye Katana">
+    <abbr>jewel</abbr>
+    <abbr>t9 katana</abbr>
+  </item>
+  <item name="Ichimonji">
+    <abbr>ichi</abbr>
+    <abbr>t10 katana</abbr>
+  </item>
+  <item name="Muramasa">
+    <abbr>mura</abbr>
+    <abbr>t11 katana</abbr>
+  </item>
+  <item name="Masamune">
+    <abbr>masa</abbr>
+    <abbr>t12 katana</abbr>
+  </item>
+  
+  <!-- Cloaks -->
+  <item name="Cloak of the Red Agent">
+    <abbr>red agent</abbr>
+    <abbr>t4 cloak</abbr>
+  </item>
+  <item name="Cloak of Endless Twilight">
+    <abbr>twilight</abbr>
+    <abbr>t5 cloak</abbr>
+  </item>
+  <item name="Cloak of Ghostly Concealment">
+    <abbr>ghostly</abbr>
+    <abbr>t6 cloak</abbr>
+  </item>
+  
+  <!-- Poisons -->
+  <item name="Felwasp Toxin">
+    <abbr>felwasp</abbr>
+    <abbr>t4 poison</abbr>
+  </item>
+  <item name="Nightwing Venom">
+    <abbr>nightwing</abbr>
+    <abbr>t5 poison</abbr>
+  </item>
+  <item name="Baneserpent Poison">
+    <abbr>milk</abbr>
+    <abbr>baneserpent</abbr>
+    <abbr>t6 poison</abbr>
+  </item>
+  
+  <!-- Prisms -->
+  <item name="Prism of Figments">
+    <abbr>fig</abbr>
+    <abbr>figments</abbr>
+    <abbr>t4 prism</abbr>
+  </item>
+  <item name="Prism of Phantoms">
+    <abbr>phantom</abbr>
+    <abbr>t5 prism</abbr>
+  </item>
+  <item name="Prism of Apparitions">
+    <abbr>appa</abbr>
+    <abbr>apparitions</abbr>
+    <abbr>t6 prism</abbr>
+  </item>
+  
+  <!-- Quivers -->
+  <item name="Magesteel Quiver">
+    <abbr>magesteel</abbr>
+    <abbr>t4 quiver</abbr>
+  </item>
+  <item name="Golden Quiver">
+    <abbr>gquiv</abbr>
+    <abbr>gquiver</abbr>
+    <abbr>t5 quiver</abbr>
+  </item>
+  <item name="Quiver of Elvish Mastery">
+    <abbr>elvish</abbr>
+    <abbr>t6 quiver</abbr>
+  </item>
+  
+  <!-- Traps -->
+  <item name="Demonhunter Trap">
+    <abbr>dhunter</abbr>
+    <abbr>demonhunter</abbr>
+    <abbr>t4 trap</abbr>
+  </item>
+  <item name="Dragonstalker Trap">
+    <abbr>dragonstalker</abbr>
+    <abbr>dtrap</abbr>
+    <abbr>t5 trap</abbr>
+  </item>
+  <item name="Giantcatcher Trap">
+    <abbr>gcatcher</abbr>
+    <abbr>t6 trap</abbr>
+  </item>
+  
+  <!-- Spells -->
+  <item name="Destruction Sphere Spell">
+    <abbr>dsphere</abbr>
+    <abbr>t4 spell</abbr>
+  </item>
+  <item name="Magic Nova Spell">
+    <abbr>mnova</abbr>
+    <abbr>t5 spell</abbr>
+  </item>
+  <item name="Elemental Detonation Spell">
+    <abbr>edeto</abbr>
+    <abbr>ele det</abbr>
+    <abbr>t6 spell</abbr>
+  </item>
+  
+  <!-- Skulls -->
+  <item name="Essence Tap Skull">
+    <abbr>etap</abbr>
+    <abbr>t4 skull</abbr>
+  </item>
+  <item name="Lifedrinker Skull">
+    <abbr>lifedrink</abbr>
+    <abbr>lifedrinker</abbr>
+    <abbr>t5 skull</abbr>
+  </item>
+  <item name="Bloodsucker Skull">
+    <abbr>bloodsucker</abbr>
+    <abbr>t6 skull</abbr>
+  </item>
+  
+  <!-- Orbs -->
+  <item name="Timelock Orb">
+    <abbr>timelock</abbr>
+    <abbr>t4 orb</abbr>
+  </item>
+  <item name="Banishment Orb">
+    <abbr>banish</abbr>
+    <abbr>borb</abbr>
+    <abbr>t5 orb</abbr>
+  </item>
+  <item name="Planefetter Orb">
+    <abbr>planefetter</abbr>
+    <abbr>pf orb</abbr>
+    <abbr>t6 orb</abbr>
+  </item>
+  
+  <!-- Tomes -->
+  <item name="Tome of Renewing">
+    <abbr>renew</abbr>
+    <abbr>renewing</abbr>
+    <abbr>t4 tome</abbr>
+  </item>
+  <item name="Tome of Divine Favor">
+    <abbr>divine tome</abbr>
+    <abbr>t5 tome</abbr>
+  </item>
+  <item name="Tome of Holy Guidance">
+    <abbr>guidance</abbr>
+    <abbr>t6 tome</abbr>
+  </item>
+  
+  <!-- Scepters -->
+  <item name="Cloudflash Scepter">
+    <abbr>cloudflash</abbr>
+    <abbr>t4 scepter</abbr>
+  </item>
+  <item name="Scepter of Skybolts">
+    <abbr>skybolt</abbr>
+    <abbr>t5 scepter</abbr>
+  </item>
+  <item name="Scepter of Storms">
+    <abbr>storms</abbr>
+    <abbr>t6 scepter</abbr>
+  </item>
+  
+  <!-- Helmets -->
+  <item name="Steel Helm">
+    <abbr>t4 helm</abbr>
+  </item>
+  <item name="Golden Helm">
+    <abbr>ghelm</abbr>
+    <abbr>t5 helm</abbr>
+  </item>
+  <item name="Helm of the Great General">
+    <abbr>ggen helm</abbr>
+    <abbr>general</abbr>
+    <abbr>t6 helm</abbr>
+  </item>
+  
+  <!-- Shields -->
+  <item name="Golden Shield">
+    <abbr>gshield</abbr>
+    <abbr>t4 shield</abbr>
+  </item>
+  <item name="Mithril Shield">
+    <abbr>mith</abbr>
+    <abbr>mithril</abbr>
+    <abbr>t5 shield</abbr>
+  </item>
+  <item name="Colossus Shield">
+    <abbr>colo</abbr>
+    <abbr>colossus</abbr>
+    <abbr>t6 shield</abbr>
+  </item>
+  
+  <!-- Seals -->
+  <item name="Seal of the Divine">
+    <abbr>divine seal</abbr>
+    <abbr>t4 seal</abbr>
+  </item>
+  <item name="Seal of the Holy Warrior">
+    <abbr>zseal</abbr>
+    <abbr>t5 seal</abbr>
+  </item>
+  <item name="Seal of the Blessed Champion">
+    <abbr>gcookie</abbr>
+    <abbr>t6 seal</abbr>
+  </item>
+  
+  <!-- Shurikens -->
+  <item name="Wind Circle">
+    <abbr>t4 shuriken</abbr>
+  </item>
+  <item name="Ice Star">
+    <abbr>t5 shuriken</abbr>
+  </item>
+  <item name="Doom Circle">
+    <abbr>d circle</abbr>
+    <abbr>t6 shuriken</abbr>
+  </item>
+  
+  <!-- Robes -->
+  <item name="Robe of the Master">
+    <abbr>master</abbr>
+    <abbr>t9 robe</abbr>
+  </item>
+  <item name="Robe of the Shadow Magus">
+    <abbr>magus</abbr>
+    <abbr>t10 robe</abbr>
+  </item>
+  <item name="Robe of the Moon Wizard">
+    <abbr>moon</abbr>
+    <abbr>t11 robe</abbr>
+  </item>
+  <item name="Robe of the Elder Warlock">
+    <abbr>elder</abbr>
+    <abbr>t12 robe</abbr>
+  </item>
+  <item name="Robe of the Grand Sorcerer">
+    <abbr>gsorc</abbr>
+    <abbr>t13 robe</abbr>
+  </item>
+  
+  <!-- Leather Armors -->
+  <item name="Drake Hide Armor">
+    <abbr>dhide</abbr>
+    <abbr>t9 leather</abbr>
+  </item>
+  <item name="Roc Leather Armor">
+    <abbr>roc</abbr>
+    <abbr>t10 leather</abbr>
+  </item>
+  <item name="Hippogriff Hide Armor">
+    <abbr>hippo</abbr>
+    <abbr>t11 leather</abbr>
+  </item>
+  <item name="Griffon Hide Armor">
+    <abbr>griffon</abbr>
+    <abbr>t12 leather</abbr>
+  </item>
+  <item name="Hydra Skin Armor">
+    <abbr>hydra</abbr>
+    <abbr>t13 leather</abbr>
+  </item>
+  
+  <!-- Heavy Armor -->
+  <item name="Dragonscale Armor">
+    <abbr>dscale</abbr>
+    <abbr>t9 armor</abbr>
+  </item>
+  <item name="Desolation Armor">
+    <abbr>deso</abbr>
+    <abbr>t10 armor</abbr>
+  </item>
+  <item name="Vengeance Armor">
+    <abbr>veng</abbr>
+    <abbr>t11 armor</abbr>
+  </item>
+  <item name="Abyssal Armor">
+    <abbr>abby</abbr>
+    <abbr>t12 armor</abbr>
+  </item>
+  <item name="Acropolis Armor">
+    <abbr>acrop</abbr>
+    <abbr>t13 armor</abbr>
+  </item>
+  
+  <!-- Rings -->
+  <item name="Ring of Paramount Attack">
+    <abbr>para atk</abbr>
+    <abbr>t4 atk</abbr>
+  </item>
+  <item name="Ring of Paramount Defense">
+    <abbr>para def</abbr>
+    <abbr>t4 def</abbr>
+  </item>
+  <item name="Ring of Paramount Speed">
+    <abbr>para spd</abbr>
+    <abbr>t4 spd</abbr>
+  </item>
+  <item name="Ring of Paramount Vitality">
+    <abbr>para vit</abbr>
+    <abbr>t4 vit</abbr>
+  </item>
+  <item name="Ring of Paramount Wisdom">
+    <abbr>para wis</abbr>
+    <abbr>t4 wis</abbr>
+  </item>
+  <item name="Ring of Paramount Dexterity">
+    <abbr>para dex</abbr>
+    <abbr>t4 dex</abbr>
+  </item>
+  <item name="Ring of Paramount Health">
+    <abbr>para hp</abbr>
+    <abbr>t4 hp</abbr>
+  </item>
+  <item name="Ring of Paramount Magic">
+    <abbr>para mp</abbr>
+    <abbr>t4 mp</abbr>
+  </item>
+  <item name="Ring of Exalted Attack">
+    <abbr>exa atk</abbr>
+    <abbr>t5 atk</abbr>
+  </item>
+  <item name="Ring of Exalted Defense">
+    <abbr>exa def</abbr>
+    <abbr>t5 def</abbr>
+  </item>
+  <item name="Ring of Exalted Speed">
+    <abbr>exa spd</abbr>
+    <abbr>t5 spd</abbr>
+  </item>
+  <item name="Ring of Exalted Vitality">
+    <abbr>exa vit</abbr>
+    <abbr>t5 vit</abbr>
+  </item>
+  <item name="Ring of Exalted Wisdom">
+    <abbr>exa wis</abbr>
+    <abbr>t5 wis</abbr>
+  </item>
+  <item name="Ring of Exalted Dexterity">
+    <abbr>exa dex</abbr>
+    <abbr>t5 dex</abbr>
+  </item>
+  <item name="Ring of Exalted Health">
+    <abbr>exa hp</abbr>
+    <abbr>t5 hp</abbr>
+  </item>
+  <item name="Ring of Exalted Magic">
+    <abbr>exa mp</abbr>
+    <abbr>t5 mp</abbr>
+  </item>
+  <item name="Ring of Unbound Attack">
+    <abbr>ubatk</abbr>
+    <abbr>t6 atk</abbr>
+  </item>
+  <item name="Ring of Unbound Defense">
+    <abbr>ubdef</abbr>
+    <abbr>t6 def</abbr>
+  </item>
+  <item name="Ring of Unbound Speed">
+    <abbr>ubspd</abbr>
+    <abbr>t6 spd</abbr>
+  </item>
+  <item name="Ring of Unbound Vitality">
+    <abbr>ubvit</abbr>
+    <abbr>t6 vit</abbr>
+  </item>
+  <item name="Ring of Unbound Wisdom">
+    <abbr>ubwis</abbr>
+    <abbr>t6 wis</abbr>
+  </item>
+  <item name="Ring of Unbound Dexterity">
+    <abbr>ubdex</abbr>
+    <abbr>t6 dex</abbr>
+  </item>
+  <item name="Ring of Unbound Health">
+    <abbr>ubhp</abbr>
+    <abbr>t6 hp</abbr>
+  </item>
+  <item name="Ring of Unbound Magic">
+    <abbr>ubmp</abbr>
+    <abbr>t6 mp</abbr>
+  </item>
+  
+  <!-- Misc -->
+  <item name="Wine Cellar Incantation">
+    <abbr>inc</abbr>
+    <abbr>wc</abbr>
+  </item>
+  <item name="Tomb of the Ancients Key">
+    <abbr>tomb</abbr>
+  </item>
+  <item name="Ocean Trench Key">
+    <abbr>trench</abbr>
+  </item>
+  <item name="Candy Key">
+    <abbr>candyland</abbr>
+  </item>
+</items>

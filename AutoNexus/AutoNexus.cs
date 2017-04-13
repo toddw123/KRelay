@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 
 using Lib_K_Relay;
 using Lib_K_Relay.GameData;
@@ -99,7 +100,7 @@ namespace AutoNexus {
 		}
 
 		public void EnemyShoot(EnemyShootPacket eshoot) {
-			for (int i = 0; i < eshoot.NumShots; i++) {
+            for (int i = 0; i < eshoot.NumShots; i++) {
 				Bullet b = new Bullet {
 					OwnerID = eshoot.OwnerId,
 					ID = eshoot.BulletId + i,
@@ -109,6 +110,18 @@ namespace AutoNexus {
 				MapBullet(b);
 			}
 		}
+
+        public void Shoot2(ServerPlayerShootPacket spsp)
+        {
+            Bullet b = new Bullet
+            {
+                OwnerID = spsp.OwnerId,
+                ID = spsp.BulletId,
+                ProjectileID = -1,
+                Damage = spsp.Damage
+            };
+            MapBullet(b);
+        }
 
 		private int PredictDamage(AoEPacket aoe) {
 			int def = client.PlayerData.Defense;
@@ -138,7 +151,13 @@ namespace AutoNexus {
 			if (ArmorBroken || (EnemyTypeMap.ContainsKey(b.OwnerID) && Bullet.IsPiercing(EnemyTypeMap[b.OwnerID], b.ProjectileID)))
 				def = 0;
 
-			return Math.Max(Math.Max(b.Damage - def, 0), (int)(0.15f * b.Damage));
+            int dmg = b.Damage - def;
+            if (dmg < (0.15 * b.Damage))
+            {
+                dmg = (int)(0.15 * b.Damage);
+            }
+            return dmg;
+			//return Math.Max(Math.Max(b.Damage - def, 0), (int)(0.15f * b.Damage));
 		}
 
 		private bool ApplyDamage(int dmg) {
@@ -148,11 +167,17 @@ namespace AutoNexus {
 			if (Config.Default.Debug)
 				PluginUtils.Log("Auto Nexus", "{0} was hit for {1} damage ({2}/{3})!", client.PlayerData.Name, dmg, HP, client.PlayerData.MaxHealth);
 
-			if (Config.Default.Enabled && (float)HP / client.PlayerData.MaxHealth <= Config.Default.NexusPercent) {
-				PluginUtils.Log("Auto Nexus", "Saved {0}'s ass at {1}/{2} HP!", client.PlayerData.Name, HP, client.PlayerData.MaxHealth);
-				client.SendToServer(Packet.Create(PacketType.ESCAPE));
-				safe = false;
-				return false;
+			if (Config.Default.Enabled)
+			{
+				float hpPerc = (float)HP / client.PlayerData.MaxHealth;
+				if (hpPerc <= Config.Default.NexusPercent || ((float)client.PlayerData.Health / client.PlayerData.MaxHealth) <= Config.Default.NexusPercent )
+				{
+                    //Console.WriteLine("HP: {0} {1} {2} {3} {4}", (float)client.PlayerData.Health / client.PlayerData.MaxHealth, Config.Default.NexusPercent, client.PlayerData.Health, client.PlayerData.MaxHealth, hpPerc);
+					PluginUtils.Log("Auto Nexus", "Saved {0}'s ass at {1}/{2} HP!", client.PlayerData.Name, HP, client.PlayerData.MaxHealth);
+					client.SendToServer(Packet.Create(PacketType.ESCAPE));
+					safe = false;
+					return false;
+				}
 			}
 			return true;
 		}
@@ -205,6 +230,7 @@ namespace AutoNexus {
 		}
 
 		Dictionary<Client, ClientState> clients;
+		private Dictionary<Client, int> _clientTimes = new Dictionary<Client, int>();
 
 		public void Initialize(Proxy proxy) {
 			GameData.Objects.Map
@@ -243,10 +269,12 @@ namespace AutoNexus {
 			proxy.HookPacket(PacketType.PLAYERHIT, OnPacket);
 			proxy.HookPacket(PacketType.AOE, OnPacket);
 			proxy.HookPacket(PacketType.GROUNDDAMAGE, OnPacket);
+            proxy.HookPacket(PacketType.SERVERPLAYERSHOOT, OnPacket);
 
 			// force map cacher to load
 			MapCacher.MapCacher.ForceLoad();
 		}
+
 
 		void OnCommand(Client client, string command, string[] args) {
 			if (args.Length == 0) {
@@ -334,6 +362,9 @@ namespace AutoNexus {
 					case PacketType.GROUNDDAMAGE:
 						state.GroundDamage(p as GroundDamagePacket);
 						break;
+                    case PacketType.SERVERPLAYERSHOOT:
+                        state.Shoot2(p as ServerPlayerShootPacket);
+                        break;
 				}
 			}
 		}

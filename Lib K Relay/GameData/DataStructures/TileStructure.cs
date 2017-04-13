@@ -55,7 +55,8 @@ namespace Lib_K_Relay.GameData.DataStructures {
 		/// </summary>
 		public string Name { get; private set; }
 
-		public TileStructure(XElement tile) {
+		public TileStructure(XElement tile) : this()
+		{
 			ID = (ushort)tile.AttrDefault("type", "0x0").ParseHex();
 			NoWalk = tile.HasElement("NoWalk");
 			Speed = tile.ElemDefault("Speed", "1").ParseFloat();

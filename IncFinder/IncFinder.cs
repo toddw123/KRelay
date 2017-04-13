@@ -26,7 +26,7 @@ namespace IncFinder
         { return "Inc Finder"; }
 
         public string GetDescription()
-        { return "Notifies you when people have Wine Cellar Incantations in their inventories."; }
+        { return "Tells you what people around you have Wine Cellar Incantations in their inventory."; }
 
         public string[] GetCommands()
         { return new string[] { "/wc" }; }
@@ -55,20 +55,23 @@ namespace IncFinder
             foreach (Entity entity in update.NewObjs)
             {
                 bool inc = false;
+                string name = "";
 
                 foreach (StatData statData in entity.Status.Data)
                 {
                     if (!statData.IsStringData() && (statData.Id >= 8 && statData.Id <= 19) || (statData.Id >= 71 && statData.Id <= 78))
                         if (statData.IntValue == INC_ID) inc = true;
 
-                    if (inc && statData.Id == StatsType.Name && statData.StringValue != client.PlayerData.Name)
-                    {
-                        if (!_incHolders.ContainsKey(entity.Status.ObjectId))
-					        _incHolders.Add(entity.Status.ObjectId, statData.StringValue);
+                    if (statData.Id == StatsType.Name)
+                        name = statData.StringValue;
+                }
 
-                        client.SendToClient(PluginUtils.CreateOryxNotification(
-                            "Inc Finder", statData.StringValue + " has an Incantation!"));
-                    }
+                if (inc && entity.Status.ObjectId != client.ObjectId)
+                {
+                    if (!_incHolders.ContainsKey(entity.Status.ObjectId))
+                        _incHolders.Add(entity.Status.ObjectId, name);
+
+                    client.SendToClient(PluginUtils.CreateOryxNotification("Inc Finder", name + " has an Incantation!"));
                 }
             }
 

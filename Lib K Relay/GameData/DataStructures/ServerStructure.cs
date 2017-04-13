@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
+using Lib_K_Relay.Utilities;
+
 namespace Lib_K_Relay.GameData.DataStructures {
 	public struct ServerStructure : IDataStructure<string> {
 		internal static Dictionary<string, ServerStructure> Load(XDocument doc) {
@@ -62,11 +64,23 @@ namespace Lib_K_Relay.GameData.DataStructures {
 		/// </summary>
 		public string Address;
 
-		public ServerStructure(XElement server) {
+		public ServerStructure(XElement server) : this() {
 			Name = server.ElemDefault("Name", "");
 			Abbreviation = abbreviations.ContainsKey(Name) ? abbreviations[Name] : "";
-            Address = /*Dns.GetHostEntry(*/server.ElemDefault("DNS", "")/*).AddressList[0].ToString()*/;
-        }
+            string dns = server.ElemDefault("DNS", "");
+
+            IPAddress ipAddress = null;
+            bool isValidIp = IPAddress.TryParse(dns, out ipAddress);
+
+            if (isValidIp)
+            {
+                Address = ipAddress.ToString();
+            }
+            else
+            {
+                Address = Dns.GetHostEntry(dns).AddressList[0].ToString();
+            }
+		}
 
 		public override string ToString() {
 			return string.Format("Server: {0}/{1} ({2})", Name, Abbreviation, Address);

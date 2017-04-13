@@ -9,13 +9,40 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="AutoLootList" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Health Potion, Mana Potion, Potion of Life, Potion of Mana, Potion of Dex, Potion of Dexterity, Potion of Vitality, Potion of Defense, Potion of Speed, Potion of Wisdom</Value>
+      <Value Profile="(Default)">Health Potion, Magic Potion, Potion of Life, Potion of Mana, Potion of Dexterity, Potion of Vitality, Potion of Defense, Potion of Speed, Potion of Wisdom, Potion of Attack</Value>
     </Setting>
     <Setting Name="LootQuests" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="NotificationColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Aqua</Value>
+    </Setting>
+    <Setting Name="LootBags" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Normal, Purple, Egg, Blue, Cyan, White, Red</Value>
+    </Setting>
+    <Setting Name="NotifBags" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Blue, Cyan, White, Red</Value>
+    </Setting>
+    <Setting Name="AutoLootWeaponTier" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="AutoLootArmorTier" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="AutoLootAbilityTier" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="AutoLootRingTier" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="AutoLootEggTier" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="QuestBags" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Blue, Cyan, White</Value>
+    </Setting>
+    <Setting Name="LootSpeed" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">700</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -118,6 +118,9 @@ namespace Lib_K_Relay.GameData.DataStructures
         /// </summary>
         public string Name { get; private set; }
 
+		// My Custom Variables
+		public string DungeonName { get; private set; }
+
         public ObjectStructure(XElement obj)
         {
             ID = (ushort)obj.AttrDefault("type", "0x0").ParseHex();
@@ -148,6 +151,9 @@ namespace Lib_K_Relay.GameData.DataStructures
             Projectiles = projs.ToArray();
 
             Name = obj.AttrDefault("id", "");
+
+			// My Custom Values
+			DungeonName = obj.ElemDefault("DungeonName", "DungeonName").ToLower();
         }
 
         public override string ToString()

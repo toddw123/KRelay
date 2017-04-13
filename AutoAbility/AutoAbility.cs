@@ -19,6 +19,7 @@ namespace AutoAbility
         private bool _enabled;
         private int _cooldown = 20;
         private Dictionary<Client, UseItemPacket> _useItemMap = new Dictionary<Client, UseItemPacket>();
+		private Dictionary<Client, int> _clientTimes = new Dictionary<Client, int>();
         private Classes[] _validClasses = { Classes.Rogue, Classes.Priest, Classes.Paladin, Classes.Warrior };
 
         public string GetAuthor()
@@ -40,15 +41,29 @@ namespace AutoAbility
         {
             _enabled = AutoAbilityConfig.Default.EnabledByDefault;
 
-            proxy.ClientConnected += (c) => _useItemMap.Add(c, null);
+			proxy.ClientConnected += (c) => _useItemMap.Add(c, null);
             proxy.ClientDisconnected += (c) => _useItemMap.Remove(c);
 
             proxy.HookPacket(PacketType.CREATESUCCESS, OnCreateSuccess);
             proxy.HookPacket(PacketType.USEITEM, OnUseItem);
             proxy.HookPacket(PacketType.UPDATE, OnUpdate);
             proxy.HookPacket(PacketType.NEWTICK, OnUpdate);
+			proxy.HookPacket(PacketType.MOVE, OnMove);
             proxy.HookCommand("aa", OnAACommand);
         }
+
+		public int GetTime(Client client)
+		{
+			return client.Time + (Environment.TickCount - _clientTimes[client]);
+		}
+
+		private void OnMove(Client client, Packet packet)
+		{
+			if (!_clientTimes.ContainsKey(client))
+				_clientTimes.Add(client, Environment.TickCount);
+
+			_clientTimes[client] = Environment.TickCount;
+		}
 
         private void OnCreateSuccess(Client client, Packet packet)
         {
@@ -68,8 +83,8 @@ namespace AutoAbility
 
         private void OnUpdate(Client client, Packet packet)
         {
-            if (_cooldown > 0) _cooldown--;
-            if (_cooldown != 0) return;
+            if (_cooldown > 0 && packet.Type == PacketType.NEWTICK) _cooldown--;
+			if (_cooldown != 0) return;
             if (!_enabled) return;
             if (_useItemMap[client] == null) return;
 
@@ -156,7 +171,7 @@ namespace AutoAbility
             _cooldown = AutoAbilityConfig.Default.RetryDelay;
 
             UseItemPacket useItem = _useItemMap[client];
-            useItem.Time = client.Time;
+            useItem.Time = GetTime(client);
             useItem.ItemUsePos = client.PlayerData.Pos;
             client.SendToServer(useItem);
 

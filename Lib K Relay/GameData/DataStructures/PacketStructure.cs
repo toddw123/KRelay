@@ -46,7 +46,8 @@ namespace Lib_K_Relay.GameData.DataStructures {
 		/// </summary>
 		public Type Type;
 
-		public PacketStructure(XElement packet) {
+		public PacketStructure(XElement packet) : this()
+		{
 			ID = (byte)packet.ElemDefault("PacketID", "").ParseInt();
 			if (!Enum.TryParse(packet.ElemDefault("PacketName", ""), out PacketType)) {
 				PacketType = PacketType.UNKNOWN;

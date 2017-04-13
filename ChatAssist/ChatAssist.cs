@@ -57,6 +57,82 @@ namespace ChatAssist
             //TextPacket text = (TextPacket)packet;
             TextPacket text = packet.To<TextPacket>();
 
+            if (text.Text == "{\"key\":\"server.oryx_closed_realm\"}")
+			{
+				client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Realm has Closed!"));
+			}
+
+            if (text.Name.Contains("#Oryx") || text.Name.Contains("Mysterious"))
+            {
+                if (text.Text.Contains("Hermit_God"))
+                {
+                    if (text.Text.Contains("new"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Hermit God Spawned!"));
+                    else if (text.Text.Contains("killed") || text.Text.Contains("death"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Hermit God Died!"));
+                }
+                else if (text.Text.Contains("Lord_of_the_Lost_Lands"))
+                {
+                    if (text.Text.Contains("new"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Lord of the Lost Lands Spawned!"));
+                    else if (text.Text.Contains("killed") || text.Text.Contains("death"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Lord of the Lost Lands Died!"));
+                }
+                else if (text.Text.Contains("Grand_Sphinx"))
+                {
+                    if (text.Text.Contains("new"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Grand Sphinx Spawned!"));
+                    else if (text.Text.Contains("killed") || text.Text.Contains("death"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Grand Sphinx Died!"));
+                }
+                else if (text.Text.Contains("Pentaract"))
+                {
+                    if (text.Text.Contains("new"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Pentaract Spawned!"));
+                    else if (text.Text.Contains("killed") || text.Text.Contains("death"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Pentaract Died!"));
+                }
+                else if (text.Text.Contains("shtrs_Defense_System"))
+                {
+                    if (text.Text.Contains("new"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Avatar Spawned!"));
+                    else if (text.Text.Contains("killed") || text.Text.Contains("death"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Avatar Died!"));
+                }
+                else if (text.Text.Contains("Ghost_Ship"))
+                {
+                    if (text.Text.Contains("new"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Ghost Ship Spawned!"));
+                    else if (text.Text.Contains("killed") || text.Text.Contains("death"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Ghost Ship Died!"));
+                }
+                else if (text.Text.Contains("Dragon_Head_Leader"))
+                {
+                    if (text.Text.Contains("new"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Rock Dragon Spawned!"));
+                    else if (text.Text.Contains("killed") || text.Text.Contains("death"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Rock Dragon Died!"));
+                }
+                else if (text.Text.Contains("Cube_God"))
+                {
+                    if (text.Text.Contains("new"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Cube God Spawned!"));
+                    else if (text.Text.Contains("killed") || text.Text.Contains("death"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Cube God Died!"));
+                }
+                else if (text.Text.Contains("Skull_Shrine"))
+                {
+                    if (text.Text.Contains("new"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Skull Shrine Spawned!"));
+                    else if (text.Text.Contains("killed") || text.Text.Contains("death"))
+                        client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Skull Shrine Died!"));
+                }
+                else
+                {
+                    client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, "Unknown New: " + text.Text));
+                }
+            }
+
             if (ChatAssistConfig.Default.DisableMessages && text.Recipient == "")
             {
                 text.Send = false;
@@ -65,7 +141,9 @@ namespace ChatAssist
 
             foreach (string filter in ChatAssistConfig.Default.Blacklist)
             {
-                if (text.Text.ToLower().Contains(filter.ToLower()))
+                if (filter.ToLower().Trim() == "") continue;
+
+                if (text.Text.ToLower().Contains(filter.ToLower().Trim()))
                 {
                     // Is spam
                     if (ChatAssistConfig.Default.CensorSpamMessages)
@@ -74,18 +152,7 @@ namespace ChatAssist
                         text.CleanText = "...";
                         return;
                     }
-
                     text.Send = false;
-
-                    if (ChatAssistConfig.Default.AutoIgnoreSpamMessage ||
-                       (ChatAssistConfig.Default.AutoIgnoreSpamPM && text.Recipient != ""))
-                    {
-                        // Ignore
-                        PlayerTextPacket playerText = new PlayerTextPacket();
-                        playerText.Text = "/ignore " + text.Name;
-                        client.SendToServer(playerText);
-                        return;
-                    }
                 }
             }
         }
