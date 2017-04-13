@@ -127,7 +127,7 @@
     <Compile Include="Networking\Packets\Server\NewTickPacket.cs" />
     <Compile Include="Networking\Packets\Client\OtherHitPacket.cs" />
     <Compile Include="Networking\Packets\Server\PasswordPromptPacket.cs" />
-    <Compile Include="Networking\Packets\Server\PetEvolveResultPacket.cs" />
+    <Compile Include="Networking\Packets\Server\EvolvedPetPacket.cs" />
     <Compile Include="Networking\Packets\Server\PicPacket.cs" />
     <Compile Include="Networking\Packets\Server\PingPacket.cs" />
     <Compile Include="Networking\Packets\Client\PlayerHitPacket.cs" />
