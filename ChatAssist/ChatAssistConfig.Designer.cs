@@ -12,7 +12,7 @@ namespace ChatAssist {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
     internal sealed partial class ChatAssistConfig : global::System.Configuration.ApplicationSettingsBase {
         
         private static ChatAssistConfig defaultInstance = ((ChatAssistConfig)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new ChatAssistConfig())));
@@ -85,14 +85,87 @@ namespace ChatAssist {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EnableNPCFilter {
+            get {
+                return ((bool)(this["EnableNPCFilter"]));
+            }
+            set {
+                this["EnableNPCFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EnableSpamFilter {
+            get {
+                return ((bool)(this["EnableSpamFilter"]));
+            }
+            set {
+                this["EnableSpamFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int StarFilter {
+            get {
+                return ((int)(this["StarFilter"]));
+            }
+            set {
+                this["StarFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int StarFilterPM {
+            get {
+                return ((int)(this["StarFilterPM"]));
+            }
+            set {
+                this["StarFilterPM"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LogChat {
+            get {
+                return ((bool)(this["LogChat"]));
+            }
+            set {
+                this["LogChat"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoResponse {
+            get {
+                return ((bool)(this["AutoResponse"]));
+            }
+            set {
+                this["AutoResponse"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
 <ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
-  <string>spam</string>
-  <string>.info</string>
-  <string>x.in</string>
-  <string>x.ln</string>
-  <string>~~~</string>
-  <string>24/7</string>
+  <string>LIFEPOT. ORG</string>
+  <string>RealmStock</string>
+  <string>ORYX.lN</string>
+  <string>RealmPower</string>
+  <string>RealmItems</string>
+  <string>Rea!mKings</string>
+  <string>Realm$aver</string>
 </ArrayOfString>")]
         public global::System.Collections.Specialized.StringCollection Blacklist {
             get {
