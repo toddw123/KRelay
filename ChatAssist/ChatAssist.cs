@@ -231,8 +231,6 @@ namespace ChatAssist
                     {
                         if (text.Text.Contains(NPCResponseList[i, 0]))
                         {
-                            PluginUtils.Log("ChatAssist", "Autoresponding to: '" + NPCResponseList[i, 0] + "' with: '" + NPCResponseList[i, 1] + "'");
-
                             PlayerTextPacket playerText = (PlayerTextPacket)Packet.Create(PacketType.PLAYERTEXT);
                             playerText.Text = NPCResponseList[i, 1];
                             client.SendToServer(playerText);
@@ -270,18 +268,11 @@ namespace ChatAssist
                     else if (text.Text.Contains("killed") || text.Text.Contains("death")) { message += " Died!"; }
                     else { return; }
                 }
-                else
+                else 
                 {
-                    if (text.Name != "")
-                    {
-                        PluginUtils.Log("ChatAssist", "Unknown Server Message: '" + text.Text + "' From: '" + text.Name + "'");
-                    }
-
                     return;
                 }
 
-                PluginUtils.Log("ChatAssist", "Message is: '" + text.Text + "'");
-                PluginUtils.Log("ChatAssist", "Notification: '" + message + "'");
                 client.SendToClient(PluginUtils.CreateNotification(client.ObjectId, message));
                 return;
             }
