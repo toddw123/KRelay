@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChatAssist.cs" />
+    <Compile Include="ChatAssistConfig.cs" />
     <Compile Include="ChatAssistConfig.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
